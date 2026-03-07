@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ai-service
+  ai:
+    google:
+      genai:
+        api-key: AIzaSyCEi3ZsUFAq9GA28CtgUJ2jAgFkPmeVcbk
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: fitness_recommendation_db
+      username: admin
+      password: admin
+      authentication-database: admin
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.track
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
