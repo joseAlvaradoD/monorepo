@@ -4,7 +4,7 @@ spring:
   ai:
     google:
       genai:
-        api-key: AIzaSyCEi3ZsUFAq9GA28CtgUJ2jAgFkPmeVcbk
+        api-key: ${GEMINI_AI_API_KEY}
   data:
     mongodb:
       host: localhost
