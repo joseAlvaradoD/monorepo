@@ -40,11 +40,7 @@ public class UserService {
 
     public Boolean existsByUserId(String userId){
         log.info("Calling User Validation API for userId: {}", userId);
-        return userRepository.existsById(userId);
-    }
-
-    public Boolean existsByKeycloakId(String email){
-        return false;
+        return userRepository.existsByKeycloakId(userId);
     }
 
     private UserResponse modelToResponse(User user) {
