@@ -33,7 +33,7 @@ const ActivityList = () => {
                         </CardActionArea>
                     </Card>
                 </Grid>
-            ))};
+            ))}
         </Grid>
     )
 };
