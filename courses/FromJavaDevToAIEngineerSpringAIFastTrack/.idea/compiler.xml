@@ -7,12 +7,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="section1" />
+        <module name="springai (1)" />
+        <module name="springai" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="geminiai" target="21" />
+      <module name="section-2" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="geminiai" options="-parameters" />
+      <module name="section-2" options="-parameters" />
       <module name="section1" options="-parameters" />
+      <module name="springai" options="-parameters" />
+      <module name="springai (1)" options="-parameters" />
     </option>
   </component>
 </project>
