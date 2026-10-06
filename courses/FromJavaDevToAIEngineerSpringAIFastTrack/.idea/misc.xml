@@ -5,6 +5,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/section1/pom.xml" />
+        <option value="$PROJECT_DIR$/section-2/pom.xml" />
+        <option value="$PROJECT_DIR$/section02/springai/pom.xml" />
+        <option value="$PROJECT_DIR$/section04/springai/pom.xml" />
       </list>
     </option>
   </component>
