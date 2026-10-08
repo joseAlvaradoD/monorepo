@@ -3,8 +3,7 @@ package com.eazybytes.springai.config;
 import com.eazybytes.springai.advisors.TokenUsageAuditAdvisor;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
-import org.springframework.ai.chat.prompt.ChatOptions;
-import org.springframework.ai.openai.OpenAiChatOptions;
+import org.springframework.ai.google.genai.GoogleGenAiChatOptions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,7 +14,8 @@ public class ChatClientConfig {
 
     @Bean
     public ChatClient chatClient(ChatClient.Builder chatClientBuilder) {
-        var options = OpenAiChatOptions.builder().model("gpt-5.4-mini").temperature(0.8);
+        var options = GoogleGenAiChatOptions.builder()
+                .temperature(0.8);
         return chatClientBuilder
                 .defaultOptions(options)
                 .defaultAdvisors(List.of(new SimpleLoggerAdvisor(),

@@ -1,8 +1,8 @@
 package com.eazybytes.springai.controller;
 
-import com.openai.models.ChatModel;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.openai.OpenAiChatOptions;
+import org.springframework.ai.google.genai.GoogleGenAiChatModel;
+import org.springframework.ai.google.genai.GoogleGenAiChatOptions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +27,7 @@ public class PromptStuffingController {
     public String promptStuffing(@RequestParam("message") String message) {
         return chatClient
                 .prompt()
-                .options(OpenAiChatOptions.builder().model(ChatModel.GPT_5_4_NANO.asString())
+                .options(GoogleGenAiChatOptions.builder().model(GoogleGenAiChatModel.ChatModel.GEMINI_2_5_FLASH_LIGHT)
                         .temperature(0.7))
                 .system(systemPromptTemplate)
                 .user(message)

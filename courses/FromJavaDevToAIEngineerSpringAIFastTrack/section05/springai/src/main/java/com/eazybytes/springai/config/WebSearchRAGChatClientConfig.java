@@ -14,7 +14,7 @@ import org.springframework.web.client.RestClient;
 
 import java.util.List;
 
-@Configuration
+//@Configuration
 public class WebSearchRAGChatClientConfig {
 
     @Bean("webSearchRAGChatClient")
