@@ -17,7 +17,7 @@ import java.util.List;
 @Configuration
 public class WebSearchRAGChatClientConfig {
 
-    @Bean("webSearchRAGChatClient")
+    //Bean("webSearchRAGChatClient")
     public ChatClient chatClient(ChatClient.Builder chatClientBuilder,
             ChatMemory chatMemory, RestClient.Builder restClientBuilder) {
         Advisor loggerAdvisor = new SimpleLoggerAdvisor();

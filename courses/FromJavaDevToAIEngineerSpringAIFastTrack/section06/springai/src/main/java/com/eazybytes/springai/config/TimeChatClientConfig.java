@@ -21,8 +21,11 @@ import java.util.List;
 public class TimeChatClientConfig {
 
     @Bean("timeChatClient")
-    public ChatClient chatClient(ChatClient.Builder chatClientBuilder,
-            ChatMemory chatMemory, TimeTools timeTools) {
+    public ChatClient chatClient(
+            ChatClient.Builder chatClientBuilder,
+            ChatMemory chatMemory,
+            TimeTools timeTools
+    ) {
         Advisor loggerAdvisor = new SimpleLoggerAdvisor();
         Advisor tokenUsageAdvisor = new TokenUsageAuditAdvisor();
         Advisor memoryAdvisor = MessageChatMemoryAdvisor.builder(chatMemory).build();
