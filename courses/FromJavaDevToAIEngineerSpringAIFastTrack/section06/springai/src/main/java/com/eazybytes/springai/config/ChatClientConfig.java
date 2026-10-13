@@ -17,8 +17,6 @@ public class ChatClientConfig {
         var options = GoogleGenAiChatOptions.builder().temperature(0.8);
         return chatClientBuilder
                 .defaultOptions(options)
-                .defaultAdvisors(List.of(new SimpleLoggerAdvisor(),
-                        new TokenUsageAuditAdvisor()))
                 .defaultSystem("""
                         You are an internal HR assistant. Your role is to help\s
                         employees with questions related to HR policies, such as\s

@@ -25,13 +25,11 @@ public class HelpDeskChatClientConfig {
     @Bean("helpDeskChatClient")
     public ChatClient chatClient(ChatClient.Builder chatClientBuilder,
             ChatMemory chatMemory, TimeTools timeTools) {
-        Advisor loggerAdvisor = new SimpleLoggerAdvisor();
-        Advisor tokenUsageAdvisor = new TokenUsageAuditAdvisor();
         Advisor memoryAdvisor = MessageChatMemoryAdvisor.builder(chatMemory).build();
         return chatClientBuilder
                 .defaultSystem(systemPromptTemplate)
                 .defaultTools(timeTools)
-                .defaultAdvisors(List.of(loggerAdvisor, memoryAdvisor,tokenUsageAdvisor))
+                .defaultAdvisors(memoryAdvisor)
                 .build();
     }
 

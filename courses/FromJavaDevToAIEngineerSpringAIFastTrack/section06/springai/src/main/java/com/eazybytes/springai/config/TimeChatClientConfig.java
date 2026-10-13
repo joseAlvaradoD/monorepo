@@ -26,12 +26,10 @@ public class TimeChatClientConfig {
             ChatMemory chatMemory,
             TimeTools timeTools
     ) {
-        Advisor loggerAdvisor = new SimpleLoggerAdvisor();
-        Advisor tokenUsageAdvisor = new TokenUsageAuditAdvisor();
         Advisor memoryAdvisor = MessageChatMemoryAdvisor.builder(chatMemory).build();
         return chatClientBuilder
                 .defaultTools(timeTools)
-                .defaultAdvisors(List.of(loggerAdvisor, memoryAdvisor,tokenUsageAdvisor))
+                .defaultAdvisors(List.of(memoryAdvisor))
                 .build();
     }
 }
